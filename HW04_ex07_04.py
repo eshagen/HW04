@@ -21,17 +21,34 @@
 
 ################################################################################
 # Imports
-
+import sys
+import math
 
 # Body
 
+def eval_loop():
+	final_value = 0.0 # attempting to initialize a variable to hold the potential 'last expression evaluated'
+	while True:
+		user_statement = raw_input("Please enter a string to be evaluated:\n")
+		if (user_statement == 'done'):
+			return final_value # exit the while loop
+		else:
+			try:
+				print eval(user_statement)			
+				final_value = eval(user_statement) # Attempting to save value in case it is the last expression evaluated
+			except:
+				print "Please submit a valid string" 
+				continue
 
+
+
+		
 
 
 ################################################################################
 def main():
-    pass # Remove this line and uncomment below once eval_loop is defined.
-    # eval_loop()
+
+    eval_loop()
     
 
 if __name__ == '__main__':
